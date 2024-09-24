@@ -5,6 +5,7 @@ import pointer from '../../../gambar/pointer.png';
 import kunci from '../../../gambar/kunci.png';
 import './Aceh.css';
 import axios from 'axios';
+import ModalButtonn from "../../ModalButton";
 import Modal from "../../Modal";
 
 const Map = () => {
@@ -14,10 +15,17 @@ const Map = () => {
   const [weather, setWeather] = useState([]);
   const [weatherId, setWeatherId] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [showButton, setShowButton] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+  const [modalButton, setModalButton] = useState("");
   const displayModal = (message) => {
     setModalMessage(message);
     setShowModal(true);
+  };
+
+  const displayModalButton = (message) => {
+    setModalButton(message);
+    setShowButton(true);
   };
 
   const handleWeather = () => {
@@ -41,7 +49,10 @@ const Map = () => {
   const [health, setHealth] = useState(location.state?.health);
   
     const handleAceh = () => {
-        navigate("/aceh", { state: { name: name, character: character, health: health, money: money, weather: weather, weatherId: weatherId, makananAceh1: makananAceh1, makananAceh2:makananAceh2, makananAceh3:makananAceh3} });
+        displayModalButton("Perjalanan ke Aceh Dimulai!!!");
+        setTimeout(() => {
+          navigate("/aceh", { state: { name: name, character: character, health: health, money: money, weather: weather, weatherId: weatherId, makananAceh1: makananAceh1, makananAceh2:makananAceh2, makananAceh3:makananAceh3} });
+        }, 2000);
     };
     
     const handleKunci = () => {
@@ -54,6 +65,11 @@ const Map = () => {
         isOpen={showModal}
         onClose={() => setShowModal(false)}
         message={modalMessage}
+      />
+      <ModalButtonn
+        isOpen={showButton}
+        onClose={() => setShowButton(false)}
+        message={modalButton}
       />
       <div className='container-map'>
         <img src={map} alt="map" className='map ' />

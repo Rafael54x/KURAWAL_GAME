@@ -117,7 +117,7 @@ const Padang = () => {
               src={restoran}
               alt="Restoran"
               onClick={handleResto}
-              className="kota cursor-pointer"
+              className="kota cursor-pointer animate-[bounce_5s_ease-in-out_infinite]"
             />
           </div>
           <div className="hotel">
@@ -125,7 +125,7 @@ const Padang = () => {
               src={hotel}
               alt="Hotel"
               onClick={handleHotel}
-              className=" kota  cursor-pointer "
+              className=" kota  cursor-pointer animate-[bounce_5s_ease-in-out_infinite]"
             />
           </div>
           <div className="museum">
@@ -133,7 +133,7 @@ const Padang = () => {
               src={museum}
               alt="Museum"
               onClick={handleMuseum}
-              className="kota cursor-pointer"
+              className="kota cursor-pointer animate-[bounce_5s_ease-in-out_infinite]"
             />
           </div>
         </div>

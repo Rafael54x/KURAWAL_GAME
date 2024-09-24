@@ -4,6 +4,7 @@ import map from '../../../gambar/map.png';
 import pointer from '../../../gambar/pointer.png';
 import kunci from '../../../gambar/kunci.png';
 import './Bangka.css';
+import ModalButtonn from "../../ModalButton";
 import Modal from "../../Modal";
 import axios from 'axios';
 
@@ -14,13 +15,19 @@ const MapBangka = () => {
   const [weather, setWeather] = useState([]);
   const [weatherId, setWeatherId] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [showButton, setShowButton] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+  const [modalButton, setModalButton] = useState("");
 
   const displayModal = (message) => {
     setModalMessage(message);
     setShowModal(true);
   };
 
+  const displayModalButton = (message) => {
+    setModalButton(message);
+    setShowButton(true);
+  };
 
   const handleWeather = () => {
     return axios.get(urlWeather).then((res) => {
@@ -53,9 +60,17 @@ const MapBangka = () => {
     totalMoney+=50;
     setMoney(totalMoney);
     setHealth(200);
-    displayModal("Anda mendapatkan uang tambahan sejumlah 50!");
-    displayModal("Darah anda bertambah menjadi 200!");
-    navigate("/bangka", { state: { name: name, character: character, health: health, money: totalMoney, weather: weather, weatherId: weatherId, makananBangka1: makananBangka1, makananBangka2:makananBangka2, makananBangka3:makananBangka3} });
+      displayModalButton("Anda mendapatkan uang tambahan sejumlah 50!");
+    setTimeout(() => {
+      displayModalButton("Darah anda bertambah menjadi 200!");
+    }, 1000);
+    setTimeout(() => {
+      displayModalButton("Perjalanan ke Bangka Dimulai!!!");
+    }, 2000);
+    setTimeout(() => {
+      navigate("/bangka", { state: { name: name, character: character, health: health, money: totalMoney, weather: weather, weatherId: weatherId, makananBangka1: makananBangka1, makananBangka2:makananBangka2, makananBangka3:makananBangka3} });
+    }, 4000);
+    
   };
 
   return (
@@ -64,6 +79,11 @@ const MapBangka = () => {
         isOpen={showModal}
         onClose={() => setShowModal(false)}
         message={modalMessage}
+      />
+      <ModalButtonn
+        isOpen={showButton}
+        onClose={() => setShowButton(false)}
+        message={modalButton}
       />
       <div className='container-map '>
         <img src={map} alt="map" className='map ' />

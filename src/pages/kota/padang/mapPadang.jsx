@@ -4,6 +4,7 @@ import map from '../../../gambar/map.png';
 import pointer from '../../../gambar/pointer.png';
 import kunci from '../../../gambar/kunci.png';
 import './Padang.css';
+import ModalButtonn from "../../ModalButton";
 import Modal from "../../Modal";
 import axios from 'axios';
 
@@ -14,13 +15,19 @@ const MapPadang = () => {
   const [weather, setWeather] = useState([]);
   const [weatherId, setWeatherId] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [showButton, setShowButton] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+  const [modalButton, setModalButton] = useState("");
 
   const displayModal = (message) => {
     setModalMessage(message);
     setShowModal(true);
   };
 
+  const displayModalButton = (message) => {
+    setModalButton(message);
+    setShowButton(true);
+  };
 
   const handleWeather = () => {
     return axios.get(urlWeather).then((res) => {
@@ -53,9 +60,17 @@ const MapPadang = () => {
     totalMoney+=50;
     setMoney(totalMoney);
     setHealth(140);
-    displayModal("Anda mendapatkan uang tambahan sejumlah 50!");
-    displayModal("Darah anda bertambah menjadi 140!");
-    navigate("/padang", { state: { name: name, character: character, health: health, money: totalMoney, weather: weather, weatherId: weatherId, makananPadang1: makananPadang1, makananPadang2:makananPadang2, makananPadang3:makananPadang3} });
+      displayModalButton("Anda mendapatkan uang tambahan sejumlah 50!");
+    setTimeout(() => {
+      displayModalButton("Darah anda bertambah menjadi 140!");
+    }, 1000);
+    setTimeout(() => {
+      displayModalButton("Perjalanan ke Padang Dimulai!!!");
+    }, 2000);
+    setTimeout(() => {
+      navigate("/padang", { state: { name: name, character: character, health: health, money: totalMoney, weather: weather, weatherId: weatherId, makananPadang1: makananPadang1, makananPadang2:makananPadang2, makananPadang3:makananPadang3} });
+    }, 4000);
+    
   };
 
   return (
@@ -64,6 +79,11 @@ const MapPadang = () => {
         isOpen={showModal}
         onClose={() => setShowModal(false)}
         message={modalMessage}
+      />
+      <ModalButtonn
+        isOpen={showButton}
+        onClose={() => setShowButton(false)}
+        message={modalButton}
       />
       <div className='container-map '>
         <img src={map} alt="map" className='map ' />

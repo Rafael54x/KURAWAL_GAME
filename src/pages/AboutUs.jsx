@@ -60,8 +60,6 @@ const AboutUs = () => {
                 ) : (
                     <div className="fixed place-items-center text-center">
                         <p className="mt-[1000px] text-4xl mx-32 bg-slate-800">
-                Special Thanks untuk @mjaudreysntss atas kontribusinya dalam
-                  membantu proyek ini.
                 </p>
                   <img
                     src={emje}

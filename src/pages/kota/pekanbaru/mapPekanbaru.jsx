@@ -4,6 +4,7 @@ import map from '../../../gambar/map.png';
 import pointer from '../../../gambar/pointer.png';
 import kunci from '../../../gambar/kunci.png';
 import './Pekanbaru.css';
+import ModalButtonn from "../../ModalButton";
 import Modal from "../../Modal";
 import axios from 'axios';
 
@@ -14,13 +15,19 @@ const MapPekanbaru = () => {
   const [weather, setWeather] = useState([]);
   const [weatherId, setWeatherId] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [showButton, setShowButton] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+  const [modalButton, setModalButton] = useState("");
 
   const displayModal = (message) => {
     setModalMessage(message);
     setShowModal(true);
   };
 
+  const displayModalButton = (message) => {
+    setModalButton(message);
+    setShowButton(true);
+  };
 
   const handleWeather = () => {
     return axios.get(urlWeather).then((res) => {
@@ -53,9 +60,17 @@ const MapPekanbaru = () => {
     totalMoney+=50;
     setMoney(totalMoney);
     setHealth(160);
-    displayModal("Anda mendapatkan uang tambahan sejumlah 50!");
-    displayModal("Darah anda bertambah menjadi 160!");
-    navigate("/pekanbaru", { state: { name: name, character: character, health: health, money: totalMoney, weather: weather, weatherId: weatherId, makananPekanbaru1: makananPekanbaru1, makananPekanbaru2:makananPekanbaru2, makananPekanbaru3:makananPekanbaru3} });
+    displayModalButton("Anda mendapatkan uang tambahan sejumlah 50!");
+    setTimeout(() => {
+      displayModalButton("Darah anda bertambah menjadi 160!");
+    }, 1000);
+    setTimeout(() => {
+      displayModalButton("Perjalanan ke Pekanbaru Dimulai!!!");
+    }, 2000);
+    setTimeout(() => {
+      navigate("/pekanbaru", { state: { name: name, character: character, health: health, money: totalMoney, weather: weather, weatherId: weatherId, makananPekanbaru1: makananPekanbaru1, makananPekanbaru2:makananPekanbaru2, makananPekanbaru3:makananPekanbaru3} });
+    }, 4000);
+    
   };
 
   return (

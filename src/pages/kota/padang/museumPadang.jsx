@@ -142,14 +142,14 @@ const Museum = () => {
         setArena(arenaCloud);
         setMusuhBattle(musuhCloud);
         if (character === "/src/gambar/cewek.png"){
-        setCharBattle(charCeweCloud);
-      } else if (character === "/src/gambar/cewek1.png"){
-        setCharBattle(charCeweCloud1);
-      } else if (character === "/src/gambar/cowok.png"){
-        setCharBattle(charCowoCloud);
-      } else if (character === "/src/gambar/cowok1.png"){
-        setCharBattle(charCowoCloud1);
-      } else alert("error");
+          setCharBattle(charCeweCloud);
+        } else if (character === "/src/gambar/cewek1.png"){
+          setCharBattle(charCeweCloud1);
+        } else if (character === "/src/gambar/cowok.png"){
+          setCharBattle(charCowoCloud);
+        } else if (character === "/src/gambar/cowok1.png"){
+          setCharBattle(charCowoCloud1);
+        } else alert("error");
 
       
       } else if (weatherId > 800 && weatherId < 805) {

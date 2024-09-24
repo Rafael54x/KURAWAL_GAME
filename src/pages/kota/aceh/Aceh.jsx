@@ -112,12 +112,11 @@ const Aceh = () => {
         </div>
         <div className="flex justify-around p-2 ">
           <div className="restoran ">
-            
             <img
               src={restoran}
               alt="Restoran"
               onClick={handleResto}
-              className="kota cursor-pointer"
+              className="kota cursor-pointer animate-[bounce_5s_ease-in-out_infinite]"
             />
           </div>
           <div className="hotel">
@@ -125,7 +124,7 @@ const Aceh = () => {
               src={hotel}
               alt="Hotel"
               onClick={handleHotel}
-              className=" kota  cursor-pointer "
+              className=" kota cursor-pointer animate-[bounce_5s_ease-in-out_infinite]"
             />
           </div>
           <div className="museum">
@@ -133,7 +132,7 @@ const Aceh = () => {
               src={museum}
               alt="Museum"
               onClick={handleMuseum}
-              className="kota cursor-pointer"
+              className="kota cursor-pointer animate-[bounce_5s_ease-in-out_infinite]"
             />
           </div>
         </div>

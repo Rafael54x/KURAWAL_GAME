@@ -7,7 +7,8 @@ import charCewek2 from "../gambar/cewek1.png";
 import genderCowok from "../gambar/gendercowo.png";
 import genderCewek from "../gambar/gendercewe.png";
 import background from "../gambar/backgroundchar.png";
-import ModalButton from "./ModalButton";
+import ModalButtonn from "./ModalButton";
+import Modal from "./Modal";
 import audioBGM from "../audio/bsChar.mp3";
 
 const Character = () => {
@@ -26,7 +27,9 @@ const Character = () => {
   const [choose, setChoose] = useState(true);
   const [chooseGender, setChooseGender] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [showButton, setShowButton] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+  const [modalButton, setModalButton] = useState("");
   const [music, setMusic] = useState(true);
   const audioRefBGM = useRef(null);
 
@@ -40,6 +43,11 @@ const Character = () => {
   const displayModal = (message) => {
     setModalMessage(message);
     setShowModal(true);
+  };
+
+  const displayModalButton = (message) => {
+    setModalButton(message);
+    setShowButton(true);
   };
 
   const handleSubmitCowok = () => {
@@ -116,12 +124,14 @@ const Character = () => {
 
   const handleChooseCowok = () => {
     setChoose(false);
-    setChooseGender(true);
+    displayModalButton("Anda memilih gender laki-laki");
+      setChooseGender(true);
   };
 
   const handleChooseCewek = () => {
     setChoose(false);
-    setChooseGender(false);
+    displayModalButton("Anda memilih gender perempuan");
+      setChooseGender(false);
   };
 
   return (
@@ -134,11 +144,17 @@ const Character = () => {
     <audio ref={audioRefBGM}
        src={audioBGM} 
       />
-    <ModalButton
+    <ModalButtonn
         isOpen={showModal}
         onClose={() => setShowModal(false)}
         message={modalMessage}
       />
+      <Modal
+        isOpen={showButton}
+        onClose={() => setShowButton(false)}
+        message={modalButton}
+      />
+      
       {choose ? (
         <div >
             <div className="flex justify-between mx-72 mt-48 max-sm:flex max-sm:justify-between max-sm:mx-24 max-sm:mb-36">
