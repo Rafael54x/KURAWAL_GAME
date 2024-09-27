@@ -396,7 +396,7 @@ const Museum = () => {
         }
       }
       setMoney(totalMoney);
-      displayModalButton("MENANG BOS");
+      displayModalButton("MENANG");
       let charmusuh = document.getElementById("charmusuh");
         charmusuh.classList.add("animate-[ping_2.5s_ease-in-out_infinite]");
       if (music) {
@@ -415,7 +415,7 @@ const Museum = () => {
       }, 2000);
     } else if (health <= 10) {
       setTimeout(() => {
-        displayModalButton("KALAH BOS");
+        displayModalButton("KALAH");
         if (music) {
           audioRefKalah.current.play();
           audioRefBattle.current.pause();

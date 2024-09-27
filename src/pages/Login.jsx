@@ -9,11 +9,15 @@ import start from "../gambar/start.png";
 const Login = () => {
   const [name, setName] = useState('');
   const navigate = useNavigate();
-const handleSaveName = (e) => {
+  const handleSaveName = (e) => {
   setName(e.target.value);
 };
 
 const handleSubmit = () => {
+  if (name.trim() === '') {
+    alert('Username must be filled!');
+    return;
+  }
   navigate('/character', { state: { name: name } });
 };
 
@@ -27,12 +31,7 @@ const handleSubmit = () => {
         <div className='text-center '>
           <img src={maskotImage} alt='Maskot ' className='m-auto mt-36 w-4/12 motion-safe:animate-[bounce_2s_ease-in-out_infinite] max-sm:mt-16 max-sm:w-3/12'/>  
           <img src={nama} className='imgnama mx-auto' />
-          <input
-          type='text'
-          placeholder='Enter your Username'
-          value={name}
-          onChange={handleSaveName}
-          className='outline-none bg-transparent text-xl text-black text-center'/>
+          <input type='text' placeholder='Enter your Username' value={name} onChange={handleSaveName} className='outline-none bg-transparent text-xl text-black text-center'/>
           <br></br>
           <img src={start} 
           onClick={handleSubmit}
