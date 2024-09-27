@@ -112,7 +112,9 @@ const AboutUs = () => {
 
                   bsMuseum : https://youtu.be/8TKy9bzrk24?si=MMgV9GiMwJUf9Z5Z <br></br>
 
-                  bsRestoran : https://youtu.be/3V5Mf6tJcKM?si=AGBl6HSSteWKVzfD
+                  bsRestoran : https://youtu.be/3V5Mf6tJcKM?si=AGBl6HSSteWKVzfD <br></br>
+
+                  bsChar : https://youtu.be/4sgM5fLmOac?si=fYBRkNWL7RwhD5Vp
                 </p>
               </div>
             )}
