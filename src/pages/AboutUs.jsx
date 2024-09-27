@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import bgmAboutUs from "../audio/bsAboutUs.mp3";
 import bg from "../gambar/backgroundAboutUs.jpg";
-import bgkita from "../gambar/bgMuka.png";
-import emje from "../gambar/emje.png";
+import bgAboutUs from "../gambar/backgroundAboutUs.jpg";
 import maskotImage from "../gambar/maskott.png";
 
 const AboutUs = () => {
@@ -44,7 +43,7 @@ const AboutUs = () => {
       <audio ref={audioRefAboutUs} src={bgmAboutUs} />
       {page ? (
         <div className="fixed w-full h-screen font-custom">
-          <img src={bgkita} alt="background" className="fixed" />
+          <img src={bgAboutUs} alt="background" className="fixed" />
           <div className="relative grid text-center text-white">
             {back ? (
               <div className="grid relative place-items-center">
@@ -61,17 +60,15 @@ const AboutUs = () => {
                     <div className="fixed place-items-center text-center">
                         <p className="mt-[1000px] text-4xl mx-32 bg-slate-800">
                 </p>
-                  <img
-                    src={emje}
-                    alt="background"
-                    className="w-8/12 mx-auto"
-                  />
                   </div>
                 )}
               </div>
             ) : (
               <div>
-                <p className="mt-[470px] mx-12 text-md">
+                <p className="mt-[50px] mx-12 text-5xl">
+                  THANKS TO : KURAWAL 6.0
+                </p>
+                <p className="mt-[40px] mx-12 text-xl">
                   “Kita mau bikin apa yaa?”. Kata-kata ini menjadi awal mula
                   bagaimana kami bisa membuat website dengan tema "Nusantara"
                   dalam bentuk game pixel. Mengapa game pixel? Karena kami suka
@@ -93,19 +90,30 @@ const AboutUs = () => {
                   sebagai bentuk penghargaan kepada para pahlawan yang telah
                   berjuang dan berhasil membawa Indonesia pada kemerdekaan.
                 </p>
-                <p className="mt-2 mx-12 text-md">
-                  Kami meminta maaf yang sebesar-besarnya apabila website kami
-                  masih kurang memuaskan, karena kami juga masih dalam tahap
-                  belajar saat membuat ini. Tetapi jika kalian merasa puas, kami
-                  mengucapkan terima kasih karena seluruh kerja keras kami
-                  terbayarkan melalui perasaan senang kalian. Sampai jumpa!
-                </p>
-                <button
-                  onClick={handleBack}
-                  className="text-3xl animate-bounce mt-4"
+                <p
+                  className="text-md mt-10"
                 >
-                  ???
-                </button>
+                  BG SOUND SOURCE: <br></br>
+                  bsAceh : https://youtu.be/ZbtQZ34NDTk?si=_6LFLrK1FWB7xFar <br></br>
+
+                  bsPadang : https://youtu.be/FTAtMZ7j8ZI?si=wRVFe_PCgj4C7jPl <br></br>
+
+                  bsPalembang : https://youtu.be/EPS5xSqOVHI?si=T7wTgY_ZlFou7BWQ <br></br>
+
+                  bsPekanbaru : https://youtu.be/wjy5W6pJ_JI?si=YrwulCsJmQt_DnVX<br></br>
+
+                  bsAboutUs : https://youtu.be/0BIaDVnYp2A?si=mspYl9dCYhToxcG4<br></br>
+
+                  bsWin : https://youtu.be/teUWsONJkk8?si=NHZKV5yTsaqFS7Zi <br></br>
+
+                  bsKalah : https://www.youtube.com/watch?v=bceGNIg-rqI <br></br>
+
+                  bsBattle : https://youtu.be/4JgMoZEGfJ8?si=5rjLO7jaAPR6PuWW <br></br>
+
+                  bsMuseum : https://youtu.be/8TKy9bzrk24?si=MMgV9GiMwJUf9Z5Z <br></br>
+
+                  bsRestoran : https://youtu.be/3V5Mf6tJcKM?si=AGBl6HSSteWKVzfD
+                </p>
               </div>
             )}
           </div>
@@ -121,7 +129,7 @@ const AboutUs = () => {
               onClick={handlePage}
               className="text-8xl animate-bounce mt-32"
             >
-              ???
+              CREDIT
             </button>
           </div>
         </div>
