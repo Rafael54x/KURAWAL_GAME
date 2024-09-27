@@ -14,6 +14,10 @@ const handleSaveName = (e) => {
 };
 
 const handleSubmit = () => {
+  if (name.trim() === '') {
+    Swal('Error', 'Username must be filled!', 'error');
+    return;
+  }
   navigate('/character', { state: { name: name } });
 };
 
